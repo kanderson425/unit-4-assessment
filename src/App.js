@@ -10,37 +10,41 @@ class App extends Component {
     super();
     // this.handleCircleSelection = this.handleCircleSelection.bind(this);
     this.state = {
+      circles: ['1', '2', '3', '4'],
       selected: 1
     }
   }
 
-  // handleCircleSelection(e) {
+  handleCircleSelection = (idx) =>{
+    console.log(idx);
+    let newSelected = idx;
+    this.setState({selected: newSelected})
+
+  }
+
+  // handleClick1 = () => {
   //   let newSelected = 1;
+  //   this.setState({selected: newSelected});
+  //   console.log('You clicked on button 1');
   // }
 
-  handleClick1 = () => {
-    let newSelected = 1;
-    this.setState({selected: newSelected});
-    console.log('You clicked on button 1');
-  }
+  // handleClick2 = () => {
+  //   let newSelected = 2;
+  //   this.setState({selected: newSelected});
+  //   console.log('You clicked on button 2');
+  // }
 
-  handleClick2 = () => {
-    let newSelected = 2;
-    this.setState({selected: newSelected});
-    console.log('You clicked on button 2');
-  }
+  // handleClick3 = () => {
+  //   let newSelected = 3;
+  //   this.setState({selected: newSelected});
+  //   console.log('You clicked on button 3');
+  // }
 
-  handleClick3 = () => {
-    let newSelected = 3;
-    this.setState({selected: newSelected});
-    console.log('You clicked on button 3');
-  }
-
-  handleClick4 = () => {
-    let newSelected = 4;
-    this.setState({selected: newSelected});
-    console.log('You clicked on button 4');
-  }
+  // handleClick4 = () => {
+  //   let newSelected = 4;
+  //   this.setState({selected: newSelected});
+  //   console.log('You clicked on button 4');
+  // }
 
   render() {
     return (
@@ -48,14 +52,16 @@ class App extends Component {
         <header className="App-header">UNIT 4 FINAL ASSESSMENT</header>
         <main>
           <CircleSelector
+            circles={this.state.circles}
             selected={this.state.selected}
             handleCircleSelection={this.handleCircleSelection}
-            handleClick1={this.handleClick1} 
-            handleClick2={this.handleClick2} 
-            handleClick3={this.handleClick3} 
-            handleClick4={this.handleClick4} 
+            // handleClick1={this.handleClick1} 
+            // handleClick2={this.handleClick2} 
+            // handleClick3={this.handleClick3} 
+            // handleClick4={this.handleClick4} 
           />
           <Circles 
+            circles={this.state.circles}
             selected={this.state.selected}
             handleCircleSelection={this.handleCircleSelection}
           />
